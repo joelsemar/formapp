@@ -14,3 +14,13 @@ Out[6]:
  'field_2': False,
  'field_3': False,
  'id': 1}
+
+ heres what the model looks like:
+ 
+ from django.db import models
+
+# Create your models here.
+class TestModel(models.Model):
+    field_1 = models.BooleanField(default=True)
+    field_2 = models.BooleanField(default=True)
+    field_3 = models.BooleanField(default=True)
