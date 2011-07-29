@@ -1,0 +1,16 @@
+The problem is that when using model forms, all fields are set to false, even though defaults are all 'True' in the models
+
+I tested the view with
+
+curl --data "foo=bar" http://127.0.0.1:8080/ > error.html
+
+then, going into the shell:
+
+from main.models import *
+TestModel.objects.all()[0].__dict__
+Out[6]: 
+{'_state': <django.db.models.base.ModelState object at 0x1cd3850>,
+ 'field_1': False,
+ 'field_2': False,
+ 'field_3': False,
+ 'id': 1}
